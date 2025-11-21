@@ -26,7 +26,7 @@ if (isset($_POST["send"])) {
   $mail->Port = 465; //TCP port to connect to
 
   //Recipients
-  $mail->setFrom('mwezelie29@gmail.com', 'Mailer'); //Sender's email and name
+  $mail->setFrom('mwezelie29@gmail.com', 'Belge Websites'); //Sender's email and name
   $mail->addAddress('mwezelie29@gmail.com', 'Recipient Name'); //Add a recipient
   $mail->addReplyTo('mwezelie29@gmail.com', 'Information'); //Reply to email
 
@@ -44,15 +44,15 @@ if (isset($_POST["send"])) {
   $mail->isHTML(true); //Set email format to HTML
   $mail->Subject = 'New Contact Form Submission'; //Email subject
   $mail->Body = "
-        <h3 style=" color='red' padding='10px' background-color='gray'">Contact Form Details</h3>
-        <p><strong>First Name:</strong> $firstName</p>
-        <p><strong>Last Name:</strong> $lastName</p>
-        <p><strong>Email:</strong> $email</p>
-        <p><strong>Phone:</strong> $tel</p>
-        <p><strong>Date of Birth:</strong> $date</p>
-        <p><strong>City/State:</strong> $city</p>
-        <p><strong>Address:</strong> $address</p>
-        <p><strong>Employment Status:</strong> $status</p>
+      <div style='background:rgb(171, 236, 225,.5); border-radius:20px; padding-top:0px;'>
+        <h3 style=' color:rgba(255, 255, 255); padding:10px; background-color:rgba(19, 87, 64, 0.5); text-align:center; border-top-left-radius:20px; border-top-right-radius:20px; '>Contact Form Details</h3>
+
+        <p style=' padding:20px; '> Hello You have received a message from <strong style='color:rgb(1, 66, 41);'>$firstName</strong><strong style='color:rgb(1, 66, 41);'>$lastName</strong> who is <strong style='color:rgb(1, 66, 41);'>$status</strong> and whose email is <strong>$email</strong>,
+        Telephone number is <strong style='color:rgb(1, 66, 41);' >$tel</strong>  who lives on <strong style='color:rgb(1, 66, 41);'>$address</strong>,<strong style='color:rgb(1, 66, 41);'>$city</strong>.
+        </p>
+
+        <p style='text-align:center; color:rgb(136, 136, 136.7); padding:20px;'>This message was sent on <strong style='color:rgba(14, 151, 71, 1);'>$date</strong>.</p>
+      </div>
     "; //HTML message body
 
   try {
@@ -111,7 +111,7 @@ if (isset($_POST["send"])) {
           <fieldset>
             <p>What is your employment status?</p>
             <div class="radio">
-              <input type="radio" id="job" name="status" value="job">
+              <input type="radio" id="job" name="status" value="Employed">
               <label for="job">Employed</label>
             </div>
             <div class="radio">
